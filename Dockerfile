@@ -22,6 +22,8 @@ ADD scripts/spark-defaults.conf /spark-defaults.conf
 
 ADD scripts/start-master.sh /start-master.sh
 
+RUN chmod +x start-master.sh
+
 ENV SPARK_MASTER_PORT 7077
 
 ENV SPARK_MASTER_WEBUI_PORT 8080
