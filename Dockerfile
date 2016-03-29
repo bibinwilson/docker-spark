@@ -24,9 +24,17 @@ ADD scripts/start-master.sh /start-master.sh
 
 ADD scripts/start-worker.sh /start-worker.sh
 
+ADD scripts/spark-shell.sh  /spark-shell.sh
+
+ADD scripts/remove_alias.sh /remove_alias.sh
+
 RUN chmod +x start-master.sh
 
 RUN chmod +x start-worker.sh
+
+RUN chmod +x spark-shell.sh
+
+RUN chmod +x remove_alias.sh
 
 ENV SPARK_MASTER_OPTS="-Dspark.driver.port=7001 -Dspark.fileserver.port=7002 -Dspark.broadcast.port=7003 -Dspark.replClassServer.port=7004 -Dspark.blockManager.port=7005 -Dspark.executor.port=7006 -Dspark.ui.port=4040 -Dspark.broadcast.factory=org.apache.spark.broadcast.HttpBroadcastFactory"
 
